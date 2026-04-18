@@ -78,6 +78,41 @@ a {
 	align-items: start;
 }
 
+.hero-aside {
+	display: grid;
+	gap: 1rem;
+}
+
+.project-photo {
+	margin: 0;
+	padding: 0;
+	border-radius: calc(var(--radius) - 6px);
+	overflow: hidden;
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow);
+	background: rgba(0, 0, 0, 0.06);
+}
+
+.project-photo picture,
+.project-photo img {
+	display: block;
+	width: 100%;
+}
+
+.project-photo img {
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+}
+
+.project-photo figcaption {
+	padding: 0.7rem 0.9rem 0.8rem;
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+	background: rgba(255, 255, 255, 0.76);
+}
+
 .hero-kicker,
 .eyebrow {
 	color: var(--accent);
@@ -361,6 +396,10 @@ h3 {
 	.metrics-grid,
 	.timeline-item {
 		grid-template-columns: 1fr;
+	}
+
+	.project-photo img {
+		max-height: 360px;
 	}
 
 	.timeline-meta {

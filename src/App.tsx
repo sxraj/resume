@@ -49,13 +49,40 @@ function App() {
 							</div>
 						</div>
 
-						<aside className="spotlight-card">
-							<p className="spotlight-label">Current focus</p>
-							<ul className="spotlight-list">
-								{profile.focusAreas.map((item) => (
-									<li key={item}>{item}</li>
-								))}
-							</ul>
+						<aside className="hero-aside">
+							<figure className="project-photo">
+								<picture>
+									<source
+										type="image/avif"
+										srcSet={`${withBase('solar-rooftop-640.avif')} 640w, ${withBase('solar-rooftop-960.avif')} 960w`}
+										sizes="(max-width: 980px) 100vw, 34vw"
+									/>
+									<source
+										type="image/webp"
+										srcSet={`${withBase('solar-rooftop-640.webp')} 640w, ${withBase('solar-rooftop-960.webp')} 960w`}
+										sizes="(max-width: 980px) 100vw, 34vw"
+									/>
+									<img
+										src={withBase('solar-rooftop-960.jpg')}
+										alt="Rooftop solar installation project"
+										width={960}
+										height={640}
+										decoding="async"
+										loading="eager"
+										fetchPriority="high"
+									/>
+								</picture>
+								<figcaption>Rooftop solar deployment and site integration</figcaption>
+							</figure>
+
+							<div className="spotlight-card">
+								<p className="spotlight-label">Current focus</p>
+								<ul className="spotlight-list">
+									{profile.focusAreas.map((item) => (
+										<li key={item}>{item}</li>
+									))}
+								</ul>
+							</div>
 						</aside>
 					</div>
 				</section>
