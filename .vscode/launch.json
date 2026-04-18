@@ -2,14 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "ASTRO_TELEMETRY_DISABLED=1 npm run dev -- --host 0.0.0.0",
+      "command": "npm run dev -- --host 127.0.0.1",
       "name": "Development server",
       "request": "launch",
       "serverReadyAction": {
         "action": "debugWithChrome",
         "killOnServerStop": true,
-        "pattern": "Local\\s+http://localhost:(\\d+)",
-        "uriFormat": "http://localhost:%s"
+        "pattern": "Local:\\s+http://127.0.0.1:(\\d+)/",
+        "uriFormat": "http://127.0.0.1:%s"
       },
       "type": "node-terminal"
     }
