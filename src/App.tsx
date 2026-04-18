@@ -33,7 +33,7 @@ function App() {
 				<section className="hero panel">
 					<div className="eyebrow">Resume portfolio</div>
 					<div className="hero-grid">
-						<div>
+						<div className="hero-copy">
 							<p className="hero-kicker">{profile.location}</p>
 							<h1>{profile.name}</h1>
 							<p className="hero-title">{profile.title}</p>
