@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "ASTRO_TELEMETRY_DISABLED=1 npm run dev -- --host 0.0.0.0",
+      "name": "Development server",
+      "request": "launch",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "Local\\s+http://localhost:(\\d+)",
+        "uriFormat": "http://localhost:%s"
+      },
+      "type": "node-terminal"
+    }
+  ]
+}

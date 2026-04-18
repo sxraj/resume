@@ -1,0 +1,393 @@
+:root {
+	--bg: #f3efe5;
+	--bg-strong: #efe4d1;
+	--panel: rgba(255, 250, 241, 0.8);
+	--panel-strong: rgba(33, 31, 25, 0.92);
+	--text: #1f1c16;
+	--muted: #625845;
+	--accent: #16645f;
+	--line: rgba(31, 28, 22, 0.12);
+	--shadow: 0 20px 60px rgba(44, 36, 18, 0.12);
+	--radius: 28px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Avenir Next", "Segoe UI", sans-serif;
+	color: var(--text);
+	background:
+		radial-gradient(circle at top left, rgba(22, 100, 95, 0.16), transparent 32%),
+		radial-gradient(circle at 85% 10%, rgba(160, 97, 37, 0.18), transparent 20%),
+		linear-gradient(180deg, #f8f3e9 0%, var(--bg) 55%, #e8dfd0 100%);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.page-shell {
+	width: min(1180px, calc(100% - 2rem));
+	margin: 0 auto;
+	padding: 2rem 0 4rem;
+}
+
+.panel {
+	position: relative;
+	overflow: hidden;
+	padding: 1.6rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--panel);
+	backdrop-filter: blur(16px);
+	box-shadow: var(--shadow);
+}
+
+.panel::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 50%);
+	pointer-events: none;
+}
+
+.eyebrow,
+.hero-kicker,
+.spotlight-label,
+.metric-label,
+.timeline-meta,
+.stack-list span {
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	font-size: 0.72rem;
+}
+
+.hero-grid {
+	display: grid;
+	grid-template-columns: 2.1fr 1fr;
+	gap: 1.5rem;
+	align-items: start;
+}
+
+.hero-kicker,
+.eyebrow {
+	color: var(--accent);
+	font-weight: 700;
+	margin: 0 0 0.8rem;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+	font-weight: 600;
+	line-height: 0.96;
+}
+
+h1 {
+	font-size: clamp(3.5rem, 10vw, 6.5rem);
+	max-width: 9ch;
+}
+
+h2 {
+	font-size: clamp(2rem, 5vw, 3rem);
+	max-width: 12ch;
+}
+
+h3 {
+	font-size: 1.35rem;
+	line-height: 1.1;
+}
+
+.hero-title {
+	max-width: 32rem;
+	margin: 1rem 0 0;
+	font-size: clamp(1.15rem, 2vw, 1.45rem);
+	color: var(--muted);
+}
+
+.hero-summary,
+.timeline-content ul,
+.stack-list p,
+.contact-list strong,
+.spotlight-list {
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+.hero-summary {
+	max-width: 44rem;
+	margin: 1.5rem 0 0;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.9rem;
+	margin-top: 2rem;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.95rem 1.35rem;
+	border-radius: 999px;
+	border: 1px solid transparent;
+	font-weight: 700;
+	transition:
+		transform 180ms ease,
+		background 180ms ease,
+		border-color 180ms ease;
+}
+
+.button:hover,
+.contact-list a:hover {
+	transform: translateY(-2px);
+}
+
+.button-primary {
+	background: var(--accent);
+	color: #f6f2ea;
+}
+
+.button-secondary {
+	border-color: var(--line);
+	background: rgba(255, 255, 255, 0.56);
+}
+
+.spotlight-card {
+	padding: 1.5rem;
+	border-radius: calc(var(--radius) - 8px);
+	background: var(--panel-strong);
+	color: #f5efe5;
+}
+
+.spotlight-label {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.spotlight-list {
+	margin: 1.25rem 0 0;
+	padding-left: 1.1rem;
+	color: rgba(255, 255, 255, 0.84);
+}
+
+.metrics-grid,
+.content-grid {
+	display: grid;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.metrics-grid {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-value {
+	margin: 0;
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+}
+
+.metric-label {
+	margin: 0.55rem 0 0;
+	color: var(--muted);
+	line-height: 1.5;
+}
+
+.content-grid {
+	grid-template-columns: 1.5fr 0.9fr;
+	align-items: start;
+}
+
+.main-column,
+.side-column {
+	display: grid;
+	gap: 1rem;
+}
+
+.section-heading {
+	margin-bottom: 1.6rem;
+}
+
+.section-heading .eyebrow {
+	margin-bottom: 0.65rem;
+}
+
+.timeline {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.timeline-item {
+	display: grid;
+	grid-template-columns: 164px 1fr;
+	gap: 1rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--line);
+}
+
+.timeline-item:first-child,
+.stack-list article:first-child {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.timeline-meta {
+	color: var(--muted);
+}
+
+.timeline-meta p,
+.timeline-meta span,
+.timeline-company,
+.stack-list p,
+.stack-list span,
+.contact-list span {
+	margin: 0;
+}
+
+.timeline-company {
+	margin-top: 0.35rem;
+	font-weight: 700;
+	color: var(--accent);
+}
+
+.timeline-content ul {
+	margin: 1rem 0 0;
+	padding-left: 1.15rem;
+}
+
+.tag-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.tag {
+	padding: 0.6rem 0.95rem;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.54);
+	font-size: 0.95rem;
+}
+
+.stack-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.stack-list article {
+	padding-top: 1rem;
+	border-top: 1px solid var(--line);
+}
+
+.compact h3 {
+	font-size: 1.05rem;
+	line-height: 1.2;
+}
+
+.contact-panel {
+	background: linear-gradient(160deg, rgba(17, 93, 88, 0.92), rgba(12, 52, 49, 0.92));
+	color: #f7f3ea;
+}
+
+.contact-panel .eyebrow,
+.contact-panel h2,
+.contact-panel span,
+.contact-panel strong {
+	color: inherit;
+}
+
+.contact-list {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.contact-list a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 1.1rem;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.08);
+	transition:
+		transform 180ms ease,
+		background 180ms ease;
+}
+
+.contact-list strong {
+	color: rgba(255, 255, 255, 0.82);
+	font-size: 0.95rem;
+	text-align: right;
+}
+
+.panel,
+.timeline-item,
+.stack-list article,
+.contact-list a {
+	animation: rise 700ms ease both;
+}
+
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 980px) {
+	.hero-grid,
+	.content-grid,
+	.metrics-grid,
+	.timeline-item {
+		grid-template-columns: 1fr;
+	}
+
+	.timeline-meta {
+		display: flex;
+		gap: 0.75rem;
+		align-items: baseline;
+	}
+}
+
+@media (max-width: 640px) {
+	.page-shell {
+		width: min(100% - 1rem, 100%);
+		padding-top: 0.5rem;
+	}
+
+	.panel,
+	.spotlight-card {
+		padding: 1.25rem;
+	}
+
+	.hero-actions,
+	.contact-list a {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.contact-list strong {
+		text-align: left;
+	}
+}
