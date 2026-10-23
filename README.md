@@ -1,37 +1,39 @@
-# Suraj Kumar Portfolio
+# surajkumar.in
 
-A Vite + React resume portfolio built for GitHub Pages, with the resume content centralized in one data file and the latest PDF available as a direct download.
+The code for my website. Run the commands below in the VS Code terminal (Terminal → New Terminal), inside this folder.
 
-## Stack
+## 1. Change the content
 
-- Vite
-- React
-- TypeScript
-- GitHub Actions for Pages deployment
+Almost all the text is in `src/data/profile.ts`. Edit it and save.
 
-## Local development
+## 2. Preview on your Mac
 
 ```sh
-npm install
-npm run dev
+./preview-start.sh
 ```
 
-## Production checks
+This opens the site at http://localhost:4173. Only you can see it.
+After more edits, run `./preview-start.sh` again and refresh the page.
+
+When you're done:
 
 ```sh
-npm run build
+./preview-stop.sh
 ```
 
-## Content updates
+## 3. Publish
 
-- Update the page content in `src/data/profile.ts`
-- Replace the downloadable resume at `public/resume-suraj-kumar.pdf`
+```sh
+./publish.sh "What you changed"
+```
 
-## GitHub Pages
+It checks the site builds, lists the changed files and asks before uploading to GitHub.
 
-The workflow in `.github/workflows/deploy.yml` deploys automatically on pushes to `main`.
+## 4. Check it went live
 
-- Project Pages default URL: `https://sxraj.github.io/resume/`
-- Set `CUSTOM_DOMAIN` to your custom domain, such as `surajkumar.in`
-- The included `public/CNAME` keeps the deployed Pages site pinned to `surajkumar.in`
-- If `CUSTOM_DOMAIN` is empty, Vite falls back to the GitHub project-pages base path automatically
+1. **GitHub** builds the site first: https://github.com/sxraj/resume/actions
+   - Yellow dot: still building (about 1–2 minutes)
+   - Green tick: done
+   - Red cross: it failed and the live site did not change. Click it to see why.
+2. **Your domain** shows it after the green tick: https://surajkumar.in
+   - Press Cmd+Shift+R to reload. Your browser can show the old version for up to 10 minutes.

@@ -1,74 +1,80 @@
 export const profile = {
 	name: 'Suraj Kumar',
 	title: 'Energy Systems Engineer | Electrical Design, BESS & Workflow Automation',
-	location: 'Barcelona, Catalonia, Spain',
-	email: '1surajofficial1@gmail.com',
+	location: 'Barcelona, Spain · Bengaluru, India',
+	email: 'career26@surajkumar.in',
 	summary:
-		'Energy Systems Engineer with experience in renewable system design, electrical systems planning, and BESS integration. I work at the intersection of energy infrastructure, practical deployment constraints, and digital tooling that makes engineering teams faster and more reliable.',
+		'I design solar PV, battery storage and microgrid systems and carry them through to delivery: sizing and costing, tenders, procurement and commissioning on site. Four years of experience from India and Spain, mostly on off-grid and commercial projects across Africa and India. Along the way, I turn repetitive engineering work into software tools.',
 	focusAreas: [
-		'Distributed solar and BESS system design',
-		'International tender development and technical proposals',
-		'QGIS, Python, and AutoCAD workflow automation',
-		'Scalable infrastructure for off-grid and hybrid electrification',
+		'Solar PV, battery storage and hybrid microgrid design, from sizing to commissioning',
+		'International EPC tenders for UN agencies and development donors',
+		'Project delivery: procurement, multi-origin shipping and remote installation support',
+		'Engineering software and automation with Python, QGIS and AutoCAD',
 	],
 	highlights: [
-		{ value: '50+', label: 'solar rooftop projects supported across residential to industrial sites' },
-		{ value: '2 yrs', label: 'at Azimut 360 contributing to international EPC and C&I work' },
-		{ value: '240 kWp', label: 'technical-commercial proposal delivered for a rooftop solar project' },
-		{ value: '3', label: 'languages used professionally across international collaboration' },
+		{ value: '4+ yrs', label: 'Solar PV, BESS and microgrid engineering' },
+		{ value: '20+', label: 'International EPC tenders as technical lead or co-lead' },
+		{ value: '50+', label: 'PV systems designed, residential to C&I, up to 250 kWp' },
 	],
 	experience: [
 		{
-			role: 'International Engineer - International EPC',
+			role: 'Engineer, International EPC',
 			company: 'Azimut 360 SCCL',
-			period: 'Sep 2025 - Present',
+			period: 'Sep 2025 – Present',
 			location: 'Barcelona',
-			bullets: [
-				'Lead technical contributions for international tenders and proposal development.',
-				'Design and standardize distributed solar plus BESS systems for multi-site projects.',
-				'Build internal tools including AutoCAD automation from Excel inputs and API-driven monitoring workflows.',
-				'Support procurement through supplier coordination and logistics management.',
-			],
 		},
 		{
-			role: 'Engineering Intern (Thesis) - International C&I',
+			role: "Technical Intern, incl. master's thesis",
 			company: 'Azimut 360 SCCL',
-			period: 'Mar 2025 - Sep 2025',
+			period: 'May 2024 – Sep 2025',
 			location: 'Barcelona',
-			bullets: [
-				'Delivered a company-supervised thesis on microgrid planning workflows using open-source tools.',
-				'Applied QGIS, Python utilities, and custom extensions to improve planning and analysis workflows.',
-			],
 		},
 		{
-			role: 'Engineering Intern - International C&I',
-			company: 'Azimut 360 SCCL',
-			period: 'May 2024 - Mar 2025',
-			location: 'Barcelona',
-			bullets: [
-				'Contributed to international tenders through system design, cost optimization, and supplier selection.',
-				'Designed renewable energy systems with BESS using AutoCAD, PVsyst, and HOMER.',
-				'Co-designed a transformer inrush mitigation solution with simulation-backed control logic and pre-deployment testing.',
-				'Prepared the technical-commercial proposal for a 240 kWp rooftop solar project.',
-			],
-		},
-		{
-			role: 'Technical Executive',
+			role: 'Technical Executive (joined as intern, promoted within two months)',
 			company: 'EcoSoch Solar',
-			period: 'Apr 2022 - Sep 2023',
+			period: 'Mar 2022 – Sep 2023',
 			location: 'Bengaluru',
-			bullets: [
-				'Delivered design support across 50+ rooftop solar projects from residential to industrial scale.',
-				'Worked across electrical layouts, mechanical planning, and system configuration with storage integration.',
-				'Developed an automated BOM and costing workflow that improved daily quotation turnaround.',
-				'Supported solar-focused marketing initiatives alongside technical execution.',
-			],
 		},
 	],
+	workIntro: 'Project work in The Gambia, Nigeria, Mauritania, Burundi, Liberia, Uganda and India.',
+	work: [
+		{
+			title: 'Tenders for UN agencies',
+			body: 'Technical lead on 6 major international EPC tenders and co-lead on 15 more, plus commercial offers for private clients. The work spans remote off-grid minigrids with diesel backup and multi-site PV + BESS programmes: system design, bill of quantities, commercial strategy and sourcing from China and Europe.',
+		},
+		{
+			title: 'Turnkey solar, storage and EV charging',
+			body: 'Won a turnkey tender from an international development agency for a solar carport with battery storage and EV charging. Now running it as project manager and sole designer, through procurement and shipping from several countries.',
+		},
+		{
+			title: 'Field engineering and commissioning',
+			body: 'Control and protection fixes built to hold up on site: battery state-of-charge based load control over Modbus TCP, a relay scheme that stops genset back-feed on a zero-export system without extra cabling, and industrial isolation for a long serial link that kept failing in the rain. Bench-tested before shipping, then commissioned with remote support and a written commissioning manual.',
+		},
+		{
+			title: 'Engineering software',
+			body: 'A minigrid feasibility web application covering NPV, IRR, payback, LCOE and DSCR, with tariff, loan and subsidy modelling. A drawing generator that turns spreadsheet inputs into AutoCAD drawings in under a minute instead of 15+. Monitoring tools that pull inverter and battery data over APIs for faster diagnostics. I use AI as a tool to build tools, and the engineering checks stay with me.',
+		},
+		{
+			title: 'AI for engineering documents',
+			body: "Wrote the architecture and business case for an internal AI assistant that searches and answers from a company's engineering documents.",
+		},
+		{
+			title: 'Design at volume in India',
+			body: 'Designed 50+ residential to C&I systems up to 250 kWp (hybrid, off-grid, on-grid and EV charging) and prepared 160+ proposals. Built a linked costing and BoM workbook that cut quotation time by about 70% and is still in daily use, and handled complex battery commissioning and O&M cases.',
+		},
+	],
+	publication: {
+		title:
+			'Transformer Inrush Mitigation Using a Pre-Insertion Resistor in Hybrid PV BESS Genset Systems: A Field Case Study',
+		meta: 'Co-author · Presented at IEEE IAS Annual Meeting 2026 · In press, not yet indexed in IEEE Xplore',
+		summary:
+			'In a hybrid PV + BESS + genset microgrid, transfer-switch events kept re-energising an isolation transformer, and the inrush tripped breakers and stalled the diesel genset. We co-designed a pre-insertion resistor sized with transient simulation (ATP) and switched by a PLC state machine. Built, tested and commissioned on site, it cut inrush current by up to ten times in field measurements.',
+	},
 	education: [
 		{
 			institution: 'Universitat Politècnica de Catalunya',
-			degree: 'Masters in Energy Engineering, Electrical Specialisation',
+			degree: "Master's in Energy Engineering, Electrical Specialisation",
+			note: "Master's thesis graded 10/10: a GIS and Python microgrid planning workflow.",
 			period: 'Sep 2023 - Aug 2025',
 		},
 		{
@@ -94,18 +100,28 @@ export const profile = {
 		'DC power systems',
 		'EasyEDA',
 		'Internet of Things',
+		'Techno-economic modelling',
+		'Procurement & logistics',
+		'Commissioning',
+		'Project management',
+		'Modbus TCP',
+		'PLC control logic',
+		'Transient studies (ATP)',
+		'SketchUp',
+		'AI-assisted tooling',
 	],
 	languages: [
-		{ name: 'English', level: 'Full Professional' },
-		{ name: 'Hindi', level: 'Professional Working' },
+		{ name: 'English', level: 'Full Professional (IELTS 7.5)' },
+		{ name: 'Hindi', level: 'Basic Professional' },
 		{ name: 'Kannada', level: 'Native or Bilingual' },
+		{ name: 'Spanish', level: 'Elementary' },
 		{ name: 'Catalan', level: 'Elementary' },
 	],
 	links: [
 		{
 			label: 'Email',
-			value: '1surajofficial1@gmail.com',
-			href: 'mailto:1surajofficial1@gmail.com',
+			value: 'career26@surajkumar.in',
+			href: 'mailto:career26@surajkumar.in',
 			external: false,
 		},
 		{
@@ -119,12 +135,6 @@ export const profile = {
 			value: 'github.com/sxraj',
 			href: 'https://github.com/sxraj',
 			external: true,
-		},
-		{
-			label: 'Resume PDF',
-			value: 'Download the latest version',
-			href: '/resume-suraj-kumar.pdf',
-			external: false,
 		},
 	],
 } as const;

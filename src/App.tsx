@@ -11,10 +11,9 @@ const jsonLd = {
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'Barcelona',
-		addressRegion: 'Catalonia',
 		addressCountry: 'Spain',
 	},
-	sameAs: profile.links.map((link) => link.href),
+	sameAs: profile.links.filter((link) => link.external).map((link) => link.href),
 	knowsAbout: profile.skills,
 	alumniOf: profile.education.map((item) => item.institution),
 };
@@ -40,12 +39,18 @@ function App() {
 							<p className="hero-summary">{profile.summary}</p>
 
 							<div className="hero-actions">
-								<a className="button button-primary" href={withBase('resume-suraj-kumar.pdf')} download>
-									Download resume
-								</a>
-								<a className="button button-secondary" href={`mailto:${profile.email}`}>
+								<a className="button button-primary" href={`mailto:${profile.email}`}>
 									Email me
 								</a>
+							</div>
+
+							<div className="metrics-grid">
+								{profile.highlights.map((item) => (
+									<article className="metric panel" key={item.label}>
+										<p className="metric-value">{item.value}</p>
+										<p className="metric-label">{item.label}</p>
+									</article>
+								))}
 							</div>
 						</div>
 
@@ -75,15 +80,6 @@ function App() {
 					</div>
 				</section>
 
-				<section className="metrics-grid">
-					{profile.highlights.map((item) => (
-						<article className="metric panel" key={item.label}>
-							<p className="metric-value">{item.value}</p>
-							<p className="metric-label">{item.label}</p>
-						</article>
-					))}
-				</section>
-
 				<section className="content-grid">
 					<div className="main-column">
 						<section className="panel">
@@ -92,25 +88,49 @@ function App() {
 								<h2>Engineering work across renewables, BESS, and automation</h2>
 							</div>
 
-							<div className="timeline">
+							<div className="timeline compact">
 								{profile.experience.map((role) => (
 									<article className="timeline-item" key={`${role.company}-${role.period}`}>
-										<div className="timeline-meta">
-											<p>{role.period}</p>
-											<span>{role.location}</span>
-										</div>
+										<p className="timeline-meta">{role.period}</p>
 										<div className="timeline-content">
 											<h3>{role.role}</h3>
-											<p className="timeline-company">{role.company}</p>
-											<ul>
-												{role.bullets.map((bullet) => (
-													<li key={bullet}>{bullet}</li>
-												))}
-											</ul>
+											<p className="timeline-company">
+												{role.company} <span>· {role.location}</span>
+											</p>
 										</div>
 									</article>
 								))}
 							</div>
+						</section>
+
+						<section className="panel">
+							<div className="section-heading">
+								<p className="eyebrow">Selected work</p>
+								<h2>From tender to&nbsp;commissioning</h2>
+								<p className="section-intro">{profile.workIntro}</p>
+							</div>
+
+							<div className="work-grid">
+								{profile.work.map((item) => (
+									<article className="work-card" key={item.title}>
+										<h3>{item.title}</h3>
+										<p>{item.body}</p>
+									</article>
+								))}
+							</div>
+						</section>
+
+						<section className="panel">
+							<div className="section-heading">
+								<p className="eyebrow">Publication</p>
+								<h2>Research from the field</h2>
+							</div>
+
+							<article className="publication">
+								<h3>{profile.publication.title}</h3>
+								<p className="publication-meta">{profile.publication.meta}</p>
+								<p className="publication-summary">{profile.publication.summary}</p>
+							</article>
 						</section>
 
 						<section className="panel">
@@ -141,6 +161,7 @@ function App() {
 									<article key={item.institution}>
 										<h3>{item.institution}</h3>
 										<p>{item.degree}</p>
+										{'note' in item && <p className="stack-note">{item.note}</p>}
 										<span>{item.period}</span>
 									</article>
 								))}
@@ -172,7 +193,7 @@ function App() {
 							<div className="contact-list">
 								{profile.links.map((link) => (
 									<a
-										href={link.label === 'Resume PDF' ? withBase('resume-suraj-kumar.pdf') : link.href}
+										href={link.href}
 										key={link.label}
 										target={link.external ? '_blank' : undefined}
 										rel={link.external ? 'noreferrer' : undefined}

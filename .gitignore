@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# local preview server (preview-start.sh)
+.preview/
+
 # generated types
 .astro/
 
